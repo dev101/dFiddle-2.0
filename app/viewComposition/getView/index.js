@@ -9,7 +9,7 @@
   return {
     activeItem: ko.observable(),
     getItem: function(id){
-      return ko.utils.arrayFirst(catalog, function(i){return i.id=id;});
+      return ko.utils.arrayFirst(catalog, function(i){return i.id==id;});
     },
     activate: function(itemId){
       console.log('In activate()', itemId);
