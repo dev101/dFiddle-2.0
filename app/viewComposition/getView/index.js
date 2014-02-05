@@ -12,7 +12,7 @@
       return ko.utils.arrayFirst(catalog, function(i){return i.id=id;});
     },
     activate: function(itemId){
-      console.log('In activate()');
+      console.log('In activate()', itemId);
       this.activeItem(this.getItem(itemId));
     },
     canActivate: function(itemId){
