@@ -21,7 +21,7 @@
           {
               type: 'fiddle',
               title: 'Lifecycle issue?',
-              route: 'getView(/:itemId)',
+              route: 'getView',
               moduleId: 'getView/index',
               nav: true
           },
