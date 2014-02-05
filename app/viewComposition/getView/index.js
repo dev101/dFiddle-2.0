@@ -15,14 +15,14 @@
       console.log('In activate()');
       this.activeItem(this.getItem(itemId));
     },
-    canActivate: function(itemId)
+    canActivate: function(itemId){
       console.log('In canActivate()', itemId);
       return !!this.getItem(itemId);
     },
     deactivate: function(){
       console.log('In deactivate()');
     },
-    canDeactivate: function(itemId)
+    canDeactivate: function(itemId){
       console.log('In canDeactivate()', itemId);
       return true;
     },
