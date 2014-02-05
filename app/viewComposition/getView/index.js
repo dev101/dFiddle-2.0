@@ -1,28 +1,31 @@
 ﻿define(['knockout'], function(ko) {
 
-  var roles = ['default', 'role1', 'role2'];
-  var role = ko.observable('default');
-
-  var getView = ko.computed(function(){
-        var roleViewMap = {
-          'default': 'viewComposition/getView/index.html',
-          role1: 'viewComposition/getView/role1.html',
-          role2: 'viewComposition/getView/role2.html'
-        };
-
-        this.role = (role() || 'default');
-
-        return roleViewMap[this.role];
-  });
-
-
+  var catalog = [
+      {id:11, name:'Item 11'},
+      {id:22, name:'Item 22'},
+      {id:33, name:'Item 33'},
+      {id:44, name:'Item 44'}
+    ];
   return {
-    showCodeUrl: true,
-    roles: roles,
-    role: role,
-    getView: getView,
-    propertyOne: 'This is a databound property from the root context.',
-    propertyTwo: 'This property demonstrates that binding contexts flow through composed views.'
+    activeItem: ko.observable(),
+    getItem: function(id){
+      return ko.utils.arrayFirst(catalog, function(i){return i.id=id};)
+    },
+    activate: function(itemId){
+      console.log('In activate()');
+      this.activeItem(this.getItem(itemId));
+    },
+    canActivate: function(itemId)
+      console.log('In canActivate()', itemId);
+      return !!this.getItem(itemId);
+    },
+    deactivate: function(){
+      console.log('In deactivate()');
+    },
+    canDeactivate: function(itemId)
+      console.log('In canDeactivate()', itemId);
+      return true;
+    },
   };
 
 
