@@ -26,6 +26,13 @@
               nav: true
           },
           {
+              type: 'fiddle',
+              title: 'Lifecycle issue?',
+              route: 'lcycle',
+              moduleId: 'lcycle/index',
+              nav: true
+          },
+          {
 
               type: 'fiddle',
               title: 'View composition',
