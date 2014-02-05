@@ -20,16 +20,9 @@
           },
           {
               type: 'fiddle',
-              title: 'GetView()',
+              title: 'Lifecycle issue?',
               route: 'getView',
               moduleId: 'getView/index',
-              nav: true
-          },
-          {
-              type: 'fiddle',
-              title: 'Lifecycle issue?',
-              route: 'lcycle',
-              moduleId: 'lcycle/index',
               nav: true
           },
           {
